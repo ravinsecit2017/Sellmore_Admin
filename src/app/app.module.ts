@@ -21,6 +21,9 @@ import { HomeNewComponent } from './home-new/home-new.component';
 
 import { NgxPaginationModule } from 'ngx-pagination';
 import { DefaultComponent } from './default/default.component';
+import { ZipmastersCreateComponent } from './Organization_Setup/Setup/zipmasters-create/zipmasters-create.component';
+
+import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
 
 const appRoutes: Routes = [
   // { path: '', component: LoginComponent },
@@ -41,7 +44,8 @@ const appRoutes: Routes = [
     OrganizationSetupHeaderComponent,
     ZipmastersComponent,
     HomeNewComponent,
-    DefaultComponent
+    DefaultComponent,
+    ZipmastersCreateComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +55,10 @@ const appRoutes: Routes = [
     // RouterModule.forRoot(appRoutes),
     ReactiveFormsModule,
     AppRoutingModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    ConfirmationPopoverModule.forRoot({
+      confirmButtonType: 'danger'
+    })
   ],
   providers: [AlertifyService, AuthService, BackendApiService],
   bootstrap: [AppComponent]

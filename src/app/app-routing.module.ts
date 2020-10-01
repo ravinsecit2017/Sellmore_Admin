@@ -4,6 +4,7 @@ import { DefaultComponent } from './default/default.component';
 import { HomeNewComponent } from './home-new/home-new.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { ZipmastersCreateComponent } from './Organization_Setup/Setup/zipmasters-create/zipmasters-create.component';
 
 import { ZipmastersComponent } from './Organization_Setup/Setup/zipmasters/zipmasters.component';
 import { TestComponent } from './test/test.component';
@@ -14,6 +15,8 @@ const routes: Routes = [
   { path: '', component: DefaultComponent,
   children: [
     { path: 'zipmasters', component: ZipmastersComponent },
+    { path: 'zipmasters/create', component: ZipmastersCreateComponent },
+    { path: 'zipmasters/:id', component: ZipmastersCreateComponent },
     { path: 'home', component:HomeComponent},
 
   { path: 'home-new', component: HomeNewComponent},

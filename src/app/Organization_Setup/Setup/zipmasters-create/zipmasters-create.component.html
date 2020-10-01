@@ -1,0 +1,70 @@
+<div class="box-body" style="text-align:center;">
+
+  <app-organization-setup-header></app-organization-setup-header>
+
+</div>
+
+  <div class="box with-border" style="width:100%;height:auto;background:#fff;border-top: 1px solid #ccc!important;">
+    <div class="box-header" style="background:#fff;border:0;padding: 10px;">
+      <span class="box-title" style="font-weight:600;font-size:23px;padding-left: 10px;">CampaignParameter</span>
+
+    <hr>
+
+  </div>
+
+  <br />
+<div class="box-body">
+
+  <form class="form-horizontal" role="form" [formGroup]="addzipmasters" >
+    <br>
+    <div>
+
+        <div class="row">
+            <div class="col-sm-6">
+              <label for="name" class="col-sm-4 " style="font-weight: 600;margin-top:5px;margin-right: 360px;">Organization Name</label>
+
+              <span>
+                <select class="form-control" formControlName="organizationId"
+                placeholder="Pick a Organization Name" style="width: 50%;margin-left: 15px;" >
+                  <option value="">Pick a Organization Name</option>
+                  <option value="All">All</option>
+                  <option *ngFor="let organization of organizationLists">
+                    {{organization.orgname}}
+                  </option>
+                </select>
+              </span>
+            </div>
+          </div>
+          <br>
+        <div class="col-sm-6">
+            <label for="name" style="font-weight:600;margin:5px;">CampaignParameter</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" formControlName="name" placeholder="campaignparameter" required maxlength="6" numbers-only="numbers-only">
+            </div>
+        </div>
+    </div>
+    <br/>
+    <br/>
+    <br/>
+    <div align="left">
+        <div>
+
+
+            <button class="btn btn-success btn-sm btn-flat" type="submit" role="button" *ngIf="btnvisiblity" (click)="createZipmaster()">Create </button>&nbsp;
+
+            <button class="btn btn-success btn-sm btn-flat" type="submit" role="button" *ngIf="!btnvisiblity" (click)="updateZipmaster()">Update </button>&nbsp;
+
+
+
+            <a routerLink="/zipmasters" class="btn btn-danger btn-sm btn-flat" role="button"> Cancel</a>
+        </div>
+    </div>
+
+
+
+
+</form>
+
+</div>
+
+  </div>

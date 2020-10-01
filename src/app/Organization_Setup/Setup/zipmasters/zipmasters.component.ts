@@ -56,4 +56,19 @@ export class ZipmastersComponent implements OnInit {
     })
   }
 
+  confirmClicked(id: number) {
+    console.log("in confirm click", this.data.value);
+    this.apiData.getZipmastersById(id).subscribe((deleteData:any) => {
+      deleteData.deleteflag = 'yes';
+
+      console.log("in confirm click", deleteData.value);
+    this.apiData.updateZipmaster(deleteData).subscribe(zipdata => {
+
+      this.route.navigate(['/zipmasters'])
+     }, error => {
+       alert("Something went wrong");
+   });
+  });
+  }
+
 }

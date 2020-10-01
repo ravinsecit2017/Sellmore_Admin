@@ -3,25 +3,27 @@
   <app-organization-setup-header></app-organization-setup-header>
 </div>
 
-  <div class="box with-border" style="width:100%;height:auto;background:#fff;">
-    <div class="box-header" style="background:#fff;border:0;">
-      <h3 class="box-title" style="font-weight:600;font-size:23px;">CampaignParameter</h3>
+  <div class="box with-border" style="width:100%;height:auto;background:#fff;border-top: 1px solid #ccc!important;">
+    <div class="box-header" style="background:#fff;border:0;padding: 10px;">
 
-      <div class="pull-right">
-          <div class="col-sm-8" style="margin-left: 870px;margin-top:-16px;">
+        <span class="box-title" style="font-weight:600;font-size:23px;padding-left: 10px;">CampaignParameter</span>
+
+
+          <span style="float: right;">
             <select id="organization-area" ng-model="orgName" class="form-control"
-              placeholder="Pick a Organization Name" style="width:30%">
+              placeholder="Pick a Organization Name" >
               <option value="">Pick a Organization Name</option>
               <option value="All">All</option>
               <option *ngFor="let organization of organizationLists">
                 {{organization.orgname}}
               </option>
             </select>
-          </div>
-      </div>
+          </span>
+
+      <hr>
   </div>
 
-  <br />
+
 
   <div class="box-body">
 
@@ -47,7 +49,7 @@
                           <div class="input-group">
                               <input type="text" class="form-control" id="search-criteria" placeholder="Search for..." style="z-index:0; border-top-left-radius: 5px;border-bottom-left-radius: 5px;" data-ng-model="searchZipMaster">
                               <span class="input-group-btn">
-                              <button class="btn btn-default" type="button" data-ng-click="Search()" style="border-top-right-radius: 5px;border-bottom-right-radius: 5px;"><span class="fa fa-search"></span>
+                              <button class="btn btn-default" type="button" data-ng-click="Search()" style="border: 1px solid #ced4da;border-top-right-radius: 5px;border-bottom-right-radius: 5px;background-image: -webkit-linear-gradient(top,#fff 0,#e0e0e0 100%);"><span class="fa fa-search"></span>
                               </button>
                               </span>
                                <div class="no-results" style="display:none">no results found</div>
@@ -86,8 +88,8 @@
                           <td>{{ zipmaster.name }}</td>
                           <td>
                             {{zipmaster.orgName}}</td>
-                          <td><a routerLink="/zipmasters/{{ zipmaster.id }}"><span class="fa fa-pencil-square-o"></span></a>
-                              <a routerLink="/zipmasters" ><span class="fa fa-times-circle-o"></span></a>
+                          <td><a routerLink="/zipmasters/{{ zipmaster.id }}"><span class="fa fa-pencil-square-o" style="color: black"></span></a>
+                              <a routerLink="/zipmasters" mwlConfirmationPopover [popoverTitle]="popoverTitle" [popoverMessage]="popoverMessage" placement="left" (confirm)="confirmClicked(zipmaster.id)" (cancel)="cancelClicked=true"><span class="fa fa-times-circle-o" style="color: red"></span></a>
                              </td>
 
                       </tr>
