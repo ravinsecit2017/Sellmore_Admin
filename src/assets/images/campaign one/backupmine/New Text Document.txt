@@ -1,0 +1,5 @@
+changes to do :- 
+1. table m jo product dika raha hai uska height kam karo 
+2. product m click karne jo popup aa raha hai uska v height kam karo
+3. banner ka v  height jayda hai kam karo little bit
+4. and cross x ka dekh lo each scrren m

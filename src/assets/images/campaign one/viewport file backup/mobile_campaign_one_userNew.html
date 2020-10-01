@@ -1,0 +1,956 @@
+<style>
+    ::-webkit-scrollbar {
+        width: .2em;
+        /* height: 2em*/
+    }
+    /* ::-webkit-scrollbar-button {
+    background: #ddd
+    }
+    */
+    
+    ::-webkit-scrollbar-track-piece {
+        background: #f4f4f4
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        background: #808080
+    }
+    
+    h5 {
+        padding: 0;
+        margin: 0;
+    }
+    
+    .mobile {
+        display: none;
+    }
+    
+    .desktop {
+        display: block;
+    }
+    
+    @media (max-width:768px) {
+        .mobile {
+            display: block;
+        }
+        .desktop {
+            display: none;
+        }
+        #divElement {
+            position: absolute;
+            /*            width: 510px;*/
+            left: 0;
+            right: 0;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+        }
+        #divElementone {
+            position: absolute;
+            width: 500px;
+            left: 0;
+            right: 0;
+            margin-left: auto;
+            margin-right: auto;
+            height: 180px !important;
+        }
+    }
+    
+    @media only screen and (min-width: 0px) and (max-width: 320px) {
+        p {
+            font-size: 10px;
+        }
+    }
+
+</style>
+
+<!--***** Gaja chnages style add *****-->
+<style>
+    .header {
+        width: 100%;
+        height: auto;
+        background-color: #33db27;
+        color: #000;
+        text-align: center;
+        padding: 10px 0;
+        font-size: 15px;
+        font-weight: 600;
+        margin: 0;
+    }
+    
+    .search-bar {
+        width: 100%;
+        height: auto;
+        background-color: #33db27;
+        padding: 5px 0px;
+        box-shadow: 0px 2px 3px #888888;
+    }
+    
+    .banner .carousel-control {
+        display: none;
+    }
+    
+    .category {
+        width: 100%;
+        height: auto;
+        background-color: #ddd;
+        text-align: center;
+        padding: 10px;
+        /*cursor: pointer;*/
+        cursor: default;
+    }
+    
+    label {
+        font-size: x-small;
+    }
+    
+    .image-caption {
+        width: 100%;
+        height: auto;
+        color: #292929;
+        /*        background-color: #ddd;*/
+        text-align: center;
+        padding-bottom: 10px;
+        /*        padding: 3px 0;*/
+    }
+    /*
+    
+    @media screen and (max-width: 320px) {
+        .image-caption {
+            font-size: 8px;
+        }
+    }
+    
+    @media screen and (max-width: 360px) and (min-width:320px) {
+        .image-caption {
+            font-size: 8px;
+        }
+    }
+    
+*/
+
+</style>
+<!-- ********* -->
+<style>
+    /*  .annoying {
+        text-decoration: blink;
+    }
+    
+    .blink {
+        animation: blink 1.5s step-start 0s infinite;
+        color: green;
+    }
+    
+    @keyframes blink {
+        0% {
+            opacity: 0;
+        }
+        50% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
+    }*/
+    
+    div > p {
+        color: #ffffff;
+        margin: 10px;
+        font-size: 2em;
+        margin-bottom: 0px;
+    }
+    
+    .banner .carousel-indicators li {
+        display: inline-block;
+        width: 21px !important;
+        height: 1px !important;
+        margin: 0px 5px !important;
+        text-indent: -999px;
+        cursor: pointer;
+        background-color: rgba(0, 0, 0, 0);
+        border: 1px solid #d4c4b8 !important;
+        border-radius: 0px !important;
+    }
+    
+    .banner .carousel-indicators .active {
+        background-color: #fff !important;
+        width: 21px !important;
+        height: 1px !important;
+        margin: 0px 5px !important;
+        background-color: #fff;
+        border: 1px solid #fff !important;
+        border-radius: 0px !important;
+    }
+    
+    .post-content a {
+        background: none repeat scroll 0 0 #3d94ff;
+        opacity: 0.9;
+        top: 20px;
+        left: 60px;
+        position: absolute;
+        color: #ffffff;
+        padding: 10px;
+        border-radius: 100%;
+        text-align: center;
+    }
+    
+    .image-holder {
+        margin-top: 10px;
+    }
+    
+    .tumbnail {
+        cursor: pointer;
+    }
+    /*  .user-rating {
+        direction: rtl;
+        font-size: 20px;
+        unicode-bidi: bidi-override;
+        padding: 5px px;
+        display: inline-block;
+    }
+    
+    .user-rating input {
+        opacity: 0;
+        position: relative;
+        left: -15px;
+        z-index: 2;
+        cursor: pointer;
+    }
+    
+    .user-rating span.star:before {
+        color: #777777;
+        content: "ï€†";
+    }
+    
+    .user-rating span.star {
+        display: inline-block;
+        font-family: FontAwesome;
+        font-style: normal;
+        font-weight: normal;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .user-rating span {
+        margin-left: -15px;
+    }
+    
+    .user-rating span.star:before {
+        color: #777777;
+        content: "\f006";
+    }
+    
+    .user-rating input:hover + span.star:before,
+    .user-rating input:hover + span.star ~ span.star:before,
+    .user-rating input:checked + span.star:before,
+    .user-rating input:checked + span.star ~ span.star:before {
+        color: #ffd100;
+        content: "\f005";
+    }
+    
+    .selected-rating {
+        color: #ffd100;
+        font-weight: bold;
+        font-size: 3em;
+    }*/
+    
+    .spacealign {
+        padding: 3em;
+    }
+    
+    input::-webkit-calendar-picker-indicator {
+        opacity: 1;
+    }
+    
+    .post-footer-option li {
+        /*    float:left;*/
+        /*    margin-right:50px;*/
+        padding-bottom: 15px;
+        display: inline;
+        padding: 0% 3%;
+    }
+    
+    .post-footer-option li a {
+        color: #AFB4BD;
+        font-weight: 500;
+        font-size: 1.9rem;
+    }
+    
+    @media only screen and (max-width: 768px) {
+        .image-caption {
+            font-size: 9px;
+        }
+        .post-content a {
+            background: none repeat scroll 0 0 #3d94ff;
+            opacity: 0.9;
+            top: 20px;
+            left: 110px;
+            position: absolute;
+            color: #ffffff;
+            /*            padding: 15px;*/
+            border-radius: 100%;
+            width: 29%;
+            height: 25%;
+        }
+        .spacealign {
+            padding: 1em;
+        }
+    }
+    
+    body,
+    .modal-open .page-container,
+    .modal-open .page-container .navbar-fixed-top,
+    .modal-open .modal-container {
+        overflow-y: scroll;
+    }
+    
+    @media (max-width: 979px) {
+        .modal-open .page-container .navbar-fixed-top {
+            overflow-y: visible;
+        }
+    }
+    
+    #map-canvas {
+        height: 400px;
+    }
+    
+    .socialspace {
+        margin: 2px 5px;
+    }
+
+</style>
+
+<!--star rating-->
+
+<style>
+    /*span.stars,
+    span.stars span {
+        display: block;
+       
+        background: url('images/stars2.png') 0 -16px repeat-x;
+        width: 80px;
+        height: 16px;
+    }
+    
+    span.stars span {
+        background-position: 0 0;
+    }
+    
+    .alignright {
+        float: left;
+    }*/
+    
+    .glyphicon-star {
+        color: #ffc822;
+        font-size: 14px;
+    }
+    
+    .glyphicon-star-empty {
+        font-size: 14px;
+    }
+    
+    body {
+        overflow-x: hidden;
+    }
+
+</style>
+
+<!--**************url shortnr***************-->
+
+<script>
+    function googleOnLoadCallback() {
+
+        var key = 'AIzaSyD3zq6e-BeWSf70mYQtsjfAOD8m6C_NQNc'
+
+        var apisToLoad = 1; // must match number of calls to gapi.client.load()
+        var gCallback = function() {
+            if (--apisToLoad == 0) {
+                //Manual bootstraping of the application
+                //var $injector = angular.bootstrap(document, ["secondarySalesApp"]);
+            };
+        };
+        gapi.client.setApiKey(key);
+        gapi.client.load('urlshortener', 'v1', gCallback);
+    }
+
+</script>
+
+<script src="//apis.google.com/js/client.js?onload=googleOnLoadCallback"></script>
+
+<!--****************************************-->
+
+<!--------------------------------------template---------------------------------------------->
+<div id="divElementone">
+    <div class="desktop" ng-show="webact">
+        <div class="col-sm-6" style="margin-left: 500px; margin-top:30px; position:relative;">
+            <div class="col-sm-6 image" style="width:50%;  background-image: url('images/iphone12.png'); background-repeat: no-repeat; background-size: 100% 100%; height:600px; margin-left: 15px;">
+
+
+                <div style="background:#ffffff;height:360px; border: 2px; solid grey; margin-left:3px; margin-top:72px; position:relative;height:455.5px; padding:2px; overflow-y:auto; overflow-x:hidden; z-index:1;margin-right:4px;">
+                    <!--
+                    <div>
+                        <div class="pull-right">
+                            <a href="#" style="color:#ffffff;font-size:18px;" ng-click="opencontact()">
+                                <span class="glyphicon glyphicon-map-marker" style="padding:4px 12px"></span>
+                            </a>
+                        </div>
+                       
+                        <h4 style="color:#ffffff; background-color: #1e1d2e;padding:5px 10px;margin:0px;font-family:Lato,sans-serif;">{{Orgname}}</h4>
+
+                    </div> getLocation()"
+-->
+                    <div>
+                        <div class="pull-right">
+                            <a href="#" style="color:#ffffff;font-size:18px;" ng-click="getLocation()">
+                                <span class="glyphicon glyphicon-map-marker" style="padding:4px 12px;margin-top:10px;"></span>
+                            </a>
+                        </div>
+                        <!-- <h4 style="color:#666666;background:#80e5ff;padding:5px 10px;margin-top:5px;margin-bottom:5px;">{{campName}}</h4>-->
+                        <h4 style="color:#ffffff; background-color: #1e1d2e;padding:5px 10px;margin:0px;font-family:Lato,sans-serif;">
+                            
+<img src="images/prof_logo.png" id="profile_picture1" style="border-radius:100%;" ng-style="{'width':'40px', 'height':'40px'}" >&nbsp;
+                            
+                            {{Orgname}}</h4>
+
+                    </div>
+
+
+                    <div>
+                        <div class="pull-right">
+                            <a href="#" style="color:#6b6b6b;font-size:18px;" ng-click="openorderCheckout()">
+                                <span class="glyphicon glyphicon-shopping-cart" style="padding:3px 12px; "><span class="label label-primary ng-binding" style="border:1px solid #000;border-radius:50%">{{cartDisplay}}</span></span>
+
+                            </a>
+                        </div>
+                        <!-- <h4 style="color:#666666;background:#80e5ff;padding:5px 10px;margin-top:5px;margin-bottom:5px;">{{campName}}</h4>-->
+                        <h4 style="color:#6b6b6b; background-color: #ffffff;padding:5px 10px;margin-top:5px;margin-bottom:5px;   font-family:Lato,sans-serif;">Welcome, {{userName}}</h4>
+
+                    </div>
+
+                    <div class="banner">
+                        <carousel interval="3000" no-wrap="false" set-ng-animate="$parent.animate">
+                            <slide ng-repeat="product in productimages track by $index" active="slide.active">
+                                <img ng-src="{{baseurl}}{{product}}" style="width:100%;height: 240px;" class="nonDraggableImage" ng-swipe-right="next()" ng-swipe-left="prev()" ng-click="open(product)">
+                            </slide>
+                        </carousel>
+                    </div>
+
+                    <br/>
+                    <!---  <div ng-repeat="product in products track by $index">
+                        <div style="border-top:5px solid #ccc;">
+                            <div class="row" style="margin-bottom:5px;margin-top:15px;">
+                                <div class="col-sm-4" style="padding-left:20px;padding-right:5px;">
+                                    <img src="{{baseurl}}{{product}}" class="img-responsive" ng-click="open1(product)">
+                                </div>
+                                <div class="col-sm-8" style="padding-left:5px;">
+                                    <p style="margin-bottom:1px;color:#666666;">FOOD</p>
+                                    <p style="font-size:12px;">Best quality of veg and non-veg foods</p>
+                                </div>
+                            </div>
+                        </div>
+                        </div> --->
+                    <!-- <div style="border-bottom:5px solid #ccc;" ng-if="!$first">
+                    <div class="row" style="margin-bottom:5px;margin-top:15px;">
+                        <div class="col-sm-4" style="padding-left:20px;padding-right:5px;">
+                            <img src="{{baseurl}}{{product}}" class="img-responsive">
+                        </div>
+                        <div class="col-sm-8" style="padding-left:5px;">
+                            <p style="margin-bottom:1px;color:#666666;">Decoration</p>
+                            <p style="font-size:12px;">Book budget wedding banquet halls, function halls</p>
+                        </div>
+                    </div>
+                </div>-->
+                    <!--**************new chnages for product ************ -->
+                    <div class="row" style="margin:0;">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <tr>
+                                    <td ng-model="Cat">
+
+                                        <div class="row" style="background:#ffffff;">
+
+                                            <div ng-repeat="product in displayproduct track by $index">
+
+                                                <div class="col-sm-6" style="border:1px solid #ccc;">
+                                                    <!--  -->
+                                                    <!--                                                    <a style="text-decoration:none;color:#333;">-->
+                                                    <div class="image-holder">
+                                                        <div class="tumbnail">
+                                                            <img src="{{baseurl}}{{product.productimage}}" style="width:100%;height:90px;" ng-click="open1(product.productimage)" />
+                                                            <div class="wrapper">
+                                                                <div class="caption post-content">
+                                                                    <a>{{product.newoffer}}</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="image-caption">
+                                                        <span><label  style="font-weight:600;margin-top: 7px;">{{ product.productname}}</label></span>
+                                                    </div>
+                                                    <!--                                                    </a>-->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- <a href="" ng-click="openorderPage()">
+                        <div style="background-color: #00d466; text-align: center;">
+                            <p class="piscar">Order Now
+                            
+                            </p>
+                        </div>
+                    </a>
+                    <script>
+                        function blink(selector) {
+                            $(selector).fadeOut('slow', function() {
+                                $(this).fadeIn('slow', function() {
+                                    blink(this);
+                                });
+                            });
+                        }
+
+                        blink('.piscar');
+
+                    </script> -->
+                    <!-- ******************** -->
+
+
+                    <div style="width:100%; height: auto; background-color:#f2f2f2;text-align:center; padding:16px 0px 16px 0px;">
+                        <span style="color:#6b6b6b;">Thanks folks, share with your friends</span>
+                        <!--                        &nbsp; &nbsp;<img src="images/shareicon.png" style="width:25px;height:25px;" />-->
+
+
+                        <!--                    <div style="width:100%; height:auto; background-color:#2E5C8A; padding:00px;">-->
+                        <div style="margin:10px;">
+                            <div style="width:100%; height:50px; background-color:white; line-height:50px; text-align:center;">
+
+                                <div style="display:inline;" ng-Click="sendtwitter()">
+                                    <img src="images/twitter-icon.png" style="width:40px; height:40px;" />
+                                </div>
+
+                                <div style="display:inline;" ng-Click="sendfacebook()">
+                                    <img src="images/fb-icon.png" style="width:40px; height:40px;" />
+                                </div>
+
+                                <div style="display:inline;" ng-Click="mail()">
+                                    <img src="images/mail-icon.png" style="width:40px; height:40px;" />
+                                </div>
+                                <div style="display:inline;" ng-Click="watsapp()">
+                                    <img src="images/whatsapp-icon.png" style="width:40px; height:40px;" />
+                                </div>
+                                <div style="display:inline;" ng-Click="message()">
+                                    <img src="images/messege-icon.png" style="width:40px; height:40px;" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-----------------------------------------MObile----------------------------------------------------->
+<!--        <div class="mobile">   overflow-y:auto; overflow-x:hidden; z-index:1;  -->
+
+<meta name="viewport" content=" user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+<div id="divElement">
+    <div class="mobile" ng-hide="webact">
+        <div class="row">
+            <div class="col-xs-12">
+                <div style="background:#ffffff; height:360px; border: 2px; solid grey; margin-left: 00px; margin-top:00px; position:relative;height:768px; padding:2px;oveflow:hidden; ">
+
+                    <div style="position:fixed;width:100%;z-index:1;">
+                        <div style="background-color: #1e1d2e;padding:10px;">
+                            <div class="pull-right">
+                                <div id="dvDistance" style="color:#ffffff;"></div>
+                                <a href="#" style="color:#ffffff;font-size:18px;" ng-click="getLocation()">
+                                    <img src="images/locationnew.png" style="width: 35px;padding: 5px;">
+                                </a>
+                            </div>
+
+                            <h4 style="color:#ffffff;margin:7px;font-family:Lato,sans-serif;font-weight:600;font-size:18px;"><img src="images/prof_logo.png" id="profile_picture" style="border-radius:100%;"  ng-style="{'width':'40px', 'height':'40px'}">&nbsp;{{Orgname}}</h4>
+                        </div>
+
+                        <div>
+                            <div class="pull-right">
+                                <a href="#" style="color:#6c6c6c;font-size:18px;" ng-click="openorderCheckout()">
+                                    <img src="images/cartnew.png" style="width: 35px;padding:5px;margin-top:10px;">
+                                    <label class="label label-primary ng-binding" style="border-radius:50%;margin-left:-15px;">{{cartDisplay}}</label>
+                                </a>
+                            </div>
+                            <!-- <h4 style="padding-bottom: 2px; color:white;"> {{campName}}</h4> -->
+                            <!--    <h4 style="color:#666666;background:#80e5ff;padding:5px 10px;margin-top:5px;margin-bottom:5px; >{{campName}}</h4>-->
+                            <h4 style="color:#6c6c6c; background-color: #ffffff;padding:17px 10px; font-size:18px;margin:0px;font-family:Lato,sans-serif;">Welcome, {{userName}}
+                </h4>
+
+                        </div>
+                    </div>
+                    <!--            <br/><br/><br/><br/><br/><br/>-->
+
+                    <div class="panel panel-default" style="margin-bottom:10px;margin-top:35%;">
+                        <video id="videodisplay1" poster="/images/videoscreen.png" controls="true" width="100%" height="230px" ng-src={{mobvideo}} style="width:100%; height: 100%;background:#000000"></video>
+
+                    </div>
+
+                    <!--  <div class="container" class="form-control" style="width: 100%;background: #f8fafb;height:230px;padding-left:5px;padding-right:5px;">
+                        
+                        <div id="myCarousel1" class="carousel slide" data-ride="carousel" data-interval="2000">
+                            
+                            <ol class="carousel-indicators">
+                                <li data-target="#myCarousel1" data-slide-to="{{$index}}" ng-repeat="product in products track by $index" ng-class="{active:$first}"></li>
+                            </ol>
+
+                           
+                            <div class="carousel-inner" role="listbox" style="background: #f8fafb;">
+                                <div class="item active">
+                                    <img ng-src='{{baseurl}}{{productimages[0]}}' style="width: 100%; height: 230px;">
+                                </div>
+
+                                <div ng-repeat="product in productimages track by $index" class="item" ng-if="!first">
+                                    <img ng-src='{{baseurl}}{{product}}' style="width: 100%; height: 230px;" ng-click="open(product)">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <script>
+                        $(document).ready(function() {
+                            // Activate Carousel
+                            $("#myCarousel1").carousel();
+
+                            // Enable Carousel Indicators
+                            $(".item").click(function() {
+                                $("#myCarousel1").carousel($index);
+                            });
+                        });
+
+                    </script>-->
+
+                    <div class="container" class="form-control" style="width: 100%;background: #f8fafb;height:280px;padding-left:5px;padding-right:5px;">
+                        <div class="banner">
+                            <carousel interval="3000" no-wrap="false" set-ng-animate="$parent.animate">
+                                <slide ng-repeat="product in productimages track by $index" active="slide.active">
+                                    <img ng-src="{{baseurl}}{{product}}" style="width:100%;height: 280px;" class="nonDraggableImage" ng-swipe-right="next()" ng-swipe-left="prev()" ng-click="open(product)">
+                                </slide>
+                            </carousel>
+                        </div>
+                    </div>
+
+                    <br/>
+                    <!--**************new chnages for product ************ -->
+                    <div class="row" style="margin:0;">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td colspan="2" style="padding:0px;border:none;background:#ffffff;color:#6c6c6c;font-size:24px;padding-left:10px;">Offer Products</td>
+                                </tr>
+                                <tr>
+                                    <td ng-model="Cat">
+                                        <div class="row" style="background:#ffffff;">
+
+                                            <div ng-repeat="product in displayproduct track by $index">
+
+                                                <div class="col-xs-6" style="border:1px solid #ccc;">
+                                                    <!--  href="/Orderproduct" -->
+                                                    <div class="image-holder">
+                                                        <div class="tumbnail">
+                                                            <img src="{{baseurl}}{{product.productimage}}" style="width:100%;height:180px;" ng-click="open1(product.productimage)" />
+                                                            <div class="wrapper">
+                                                                <div class="caption post-content">
+                                                                    <a>{{product.newoffer}}</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="image-caption">
+                                                        <span style="font-size:16px;margin-top: 7px;">{{ product.productname}}</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div style="width:100%; height: auto; background-color:#f2f2f2;text-align:center;  padding:16px 0px 16px 0px;">
+
+                        <span style="color:#6b6b6b; font-size: 12px; ">Thanks Folks, Share With Your Friends</span>
+                        <!--------------------------------------------------------------->
+                        <div style="margin:15px">
+                            <div style="width:100%; height:85px;line-height:65px; text-align:center;background:#ffffff;padding:10px;">
+                                <div class="socialspace" style="display:inline;" ng-Click="sendtwitter()">
+                                    <img src="images/layer_10.png" style="width:45px; height:45px;" />
+                                </div>
+                                <div class="socialspace" style="display:inline;" ng-Click="sendfacebook()">
+                                    <img src="images/layer_9.png" style="width:45px; height:45px;" />
+                                </div>
+                                <div class="socialspace" style="display:inline;" ng-Click="mail()">
+                                    <img src="images/layer_11.png" style="width:45px; height:45px;" />
+                                </div>
+                                <div class="socialspace" style="display:inline;" ng-Click="watsapp()">
+                                    <img src="images/layer_13.png" style="width:45px; height:45px;" />
+                                </div>
+                                <div class="socialspace" style="display:inline;" ng-Click="message()">
+                                    <img src="images/layer_12.png" style="width:45px; height:45px;" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-------------------------sharing model----------------------------------->
+
+
+<!--*********************************************** popup Banner******************************************************-->
+<script type="text/ng-template" id="template/pic-modal.html">
+    <div class="modal-body2">
+        <div class="img-group">
+            <span aria-hidden="true" class="closebtn" ng-click="ok()" style="float:right;"><img src="images/cross-icon-web.png" style="width:30px;hieght:30px;margin:10px;
+    border-radius: 4px;"></span><span class="sr-only">Close</span>
+            <img ng-src='{{baseurl}}{{categoryimage}}' alt="No Image" class="img-responsive" style="width:100%;height:250px;" />
+            <div align="center" style="margin-top:-0px;">
+
+                <br/>
+                <div class="row" style="border:1px solid #f2f2f2;margin:0px;padding:5px;border-top:0px;color:#999999;">
+                    <hr style="margin-top:0px;">
+                    <div class="post-footer-option container" style="padding:0px;">
+                        <ul class="list-unstyled">
+                            <li ng-click="openinterested()"><a href="#"><i class="glyphicon glyphicon-thumbs-up"></i> Like</a></li>
+                            <li><a href="#"><i class="glyphicon glyphicon-comment"></i> Comment</a></li>
+                            <li><a href="#"><i class="glyphicon glyphicon-share-alt"></i> Share</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!--
+                <div class="row" style="border:1px solid #f2f2f2;margin:0px;padding:5px;border-top:0px;color:#999999;">
+                    <button type="button" class="btn btn-success" ng-click="openinterested()">Interested
+                    </button>
+                </div>
+-->
+
+            </div>
+        </div>
+
+    </div>
+
+</script>
+
+
+
+<modal4 title="zzz" visible="showModallike">
+    <div>
+
+        <div>
+            <label style="font-size:14px; font-weight: normal;">Name:</label>
+            <input ng-model="interested[0].partnername" type="text" class="form-control" style="height: 30px;" />
+        </div>
+
+        <div>
+            <label style="font-size:14px; font-weight: normal;">Mobile:</label>
+            <input ng-model="interested[0].partnermobile" type="text" class="form-control" style="height: 30px;" maxlength="15" numbers-only="numbers-only" />
+        </div>
+
+        <div>
+            <label style="font-size:14px; font-weight: normal;">E-mail:</label>
+            <input ng-model="interested[0].partneremail" type="text" class="form-control" style="height: 30px;" />
+        </div>
+    </div>
+    <br/>
+    <div align="center">
+        <a href="" data-ng-click="clearInterstdTextField()">Not You?</a>
+    </div>
+    <br/>
+
+    <div align="center">
+        <button type="submit" class="btn btn-success btn-sm" ng-click="submitinterested()">SUBMIT</button>
+    </div>
+
+
+</modal4>
+<!--*********************************product 1*************************************-->
+
+<script type="text/ng-template" id="template/pic-modal1.html">
+    <div class="modal-body2">
+        <div class="img-group ">
+            <span aria-hidden="true" class="closebtn" ng-click="ok1()" style="float:right; "><img src="images/cross-icon-web.png" style="width:35px;hieght:35px;margin:10px;padding:5px;;
+    border-radius: 4px;"></span><span class="sr-only">Close</span>
+            <div style="padding-left:0em 3em">
+                <img ng-src="{{baseurl}}{{categoryimage1}}" alt="No Image" class="img-responsive" style="width:100%;height:230px;" />
+            </div>
+            <div class="spacealign" align="center" style="margin-top:-0px;padding-top:0px;">
+                <!--
+                <button type="button" class="btn btn-success" ng-click="openinterested()" style="background:#fff700;border-color:#fac60a; color:#000000;">Interested
+                </button>
+                </div>
+                -->
+                <hr>
+                <div style="text-align:left;">
+                    <label style="font-size:18px;margin-top:0px;font-weight:600;">{{Name}}</label>
+                </div>
+                <div style="text-align:left;">
+                    <span style="font-size:16px;margin-top:0px;">{{Discription}}</span>
+                </div>
+                <!--                <div style="padding-left:15px;padding-bottom:15px;">-->
+                <div style="padding:5px 0px;text-align:left;">
+
+                    <!--<form id="user-rating-form" style="text-align:left;">
+                        <span class="user-rating">
+                            <input type="radio" name="rating" value="5"><span class="star"></span>
+
+                        <input type="radio" name="rating" value="4"><span class="star"></span>
+
+                        <input type="radio" name="rating" value="3"><span class="star"></span>
+
+                        <input type="radio" name="rating" value="2"><span class="star"></span>
+
+                        <input type="radio" name="rating" value="1"><span class="star"></span>
+                        </span>
+                        <label style="font-size:16px;">reviews</label>
+                    </form>-->
+
+
+                    <span> <label style="font-size:14px;">
+                    <rating style="float:left;" ng-model="rate" max="max" readonly="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null"></rating>&nbsp;
+                   <span style="font-weight:normal;">reviews</span></label>
+                    </span>
+                </div>
+                <div style="padding-bottom:15px;">
+                    <!--                    <h3 style="margin-top:0px;text-align:left;font-size:16px;">Unit &nbsp;{{Unit}}</h3>-->
+                    <div class="row" style="text-align:left;">
+                        <div class=" col-xs-7" style="">
+                            <div class="form-group">
+
+
+
+                                <img ng-click="decrement()" class='qtyminus' ng-disabled="qty<=0" src="images/minus_icon.png" style="width:25px;">
+                                <input type='text' ng-model="qty" name='quantity' class='qty' style="width:50px;text-align:center;border:none;border-bottom:1px solid #e6e6e6;" />
+                                <img ng-click="increment()" src="images/plus_icon.png" style="width:25px;">
+
+
+                            </div>
+                        </div>
+                        <div class="col-xs-3">
+                            <button type="button" class="btn btn-success btn-lg" ng-click="opencart()" style="padding:7px 20px;background:#00d466;border-radius:0px;" ng-hide="addbutoon">ADD
+                            </button>
+                            <button type="button" class="btn btn-success btn-lg" ng-click="opencart()" style="padding:7px 20px;background:#00d466;border-radius:0px;" ng-disabled="disableadded" ng-show="addbutoon">ADDED
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="row" style="text-align:initial;margin:0px;">
+                    <label style="font-size:16px;color:red">{{offerprsent}}</label>
+                    <br/>
+                    <label style="font-size:18px;"><strike style="color:#ccc">Rs {{oldPrice}}</strike>&nbsp;Rs {{totalamount}} , </label>
+                    <label>
+                        <h3 style="margin-top:0px;text-align:left;font-size:18px;padding-left:20px;">&nbsp;{{Unit}}</h3></label>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</script>
+
+<!--  *************************************** Map ************************************* -->
+
+
+
+
+<!--<modal3 title="" visible="showModalcontact">
+    
+
+    <div class="row" style="margin:0px;">
+        <div class="col-xs-8">
+
+        </div>
+
+        <div class="col-xs-2" style="padding-top :27px;color:#878787">
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-xs-12 " style="box-shadow:0 7px 5px -5px #333; ">
+
+                
+                <div id="map-canvas" style="width:100%;height:300px;margin-top:-27px;"></div>
+
+
+            </div>
+        </div>
+
+    </div>
+    <br/>
+    <br/>
+
+    <div class="row">
+        <div class="col-xs-8" style="margin-left:22px;">
+            <h4 style="color:000000;font-weight:600; font-size:20px;">{{Contactname}} </h4>
+
+        </div>
+
+        <div class="row" style="padding-left:33px;;">
+            <div class="col-xs-12">
+
+                <span class="glyphicon glyphicon-map-marker" style="color:#878787;"></span>
+
+                <label for="details" style="margin-left:10px;color:#878787; font-size:18px;font-weight:normal;">{{Addressone}}</label>
+
+            </div>
+
+        </div>
+
+        <div class="row" style="padding-left:33px;">
+
+
+            <div class="col-xs-12" style="color:#878787;">
+
+                <span class="glyphicon glyphicon-time"></span>
+
+                <label for="details" style="margin-left:10px; font-size:18px;font-weight:normal;">8am-10am</label>
+
+            </div>
+
+        </div>
+
+
+        <div class="row" style="padding-left:33px;">
+
+            <div class="col-xs-6" style="color:#878787;">
+
+                <span class="glyphicon glyphicon-earphone"></span>
+                <label for="details" style="margin-left:10px;font-size:18px;font-weight:normal;">{{Contactno}}</label>
+            </div>
+
+
+            <div class="col-xs-4" style="color:#878787;margin-top:-10px;">
+
+                <button type="button" id="call" class="btn btn-success" style="background-color:#00d466; margin-left: 30px;border-radius:0px;">Call Now</button>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</modal3>-->

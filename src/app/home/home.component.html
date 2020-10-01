@@ -1,0 +1,262 @@
+<!-- <p>home works!</p> -->
+
+<!-- <p>navbar works!</p>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+
+</nav> -->
+
+<style>
+  .navbar-nav>.user-menu>.dropdown-menu {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    padding: 1px 0 0 0;
+    border-top-width: 0;
+    width: 280px;
+  }
+
+  .pull-right {
+    position: absolute;
+    right: 0;
+  }
+
+  .dropdown-menu {
+    top: 89%;
+    z-index: 1000;
+    float: left;
+    min-width: 160px;
+    margin: 2px 0 0;
+    font-size: 14px;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, .15);
+  }
+
+  li.user-header {
+    background-color: #ffffff;
+    color: #333;
+  }
+
+  .navbar-nav>li {
+    position: relative;
+  }
+
+  .navbar-nav>.user-menu>.dropdown-menu {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    padding: 1px 0 0 0;
+    border-top-width: 0;
+    width: 280px;
+  }
+
+  .open>.dropdown-menu {
+    display: block;
+  }
+
+  .navbar-nav>.user-menu>.dropdown-menu>li.user-header>img {
+    z-index: 5;
+    height: 90px;
+    width: 90px;
+    border: 3px solid;
+    border-color: transparent;
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .navbar-nav>li>.dropdown-menu {
+    position: absolute;
+    right: 0;
+    left: auto;
+  }
+
+  .navbar-nav>.user-menu>.dropdown-menu>li.user-header {
+    height: 175px;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .navbar-nav>.user-menu>.dropdown-menu>.user-footer {
+    background-color: #dddddd;
+    padding: 10px;
+  }
+
+  .nav>li>a {
+    position: relative;
+    display: block;
+    padding: 5px 15px !important;
+  }
+
+  .sidebar {
+    background: #2f313a !important;
+    color: #fff;
+    height: 690px
+  }
+
+  .sidebar a {
+    color: #8a90aa;
+    text-decoration: none;
+  }
+
+  .mr-auto li {
+    padding: 12px 5px 12px 15px;
+  }
+
+  #topimg {
+    width: 37%;
+    position: relative;
+    left: 27%;
+    top: -9px;
+  }
+
+  .wellheader {
+    font-size: 22px;
+    line-height: 2;
+    padding-left: 25px;
+    color: #696969;
+  }
+
+  .trend li a {
+    padding: 15px;
+  }
+
+  .box {
+    position: absolute;
+    /* border-radius: 3px; */
+    background: #ffffff;
+    /* border-top: 3px solid #d2d6de; */
+    margin-bottom: 20px;
+    /* width: 100%; */
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  }
+
+</style>
+<div class="wrapper" style="display: flex;">
+  <div class="sidebar" style="width: 17%;">
+    <div style="background-image: linear-gradient(to bottom, #00acf6, #415ace);color:#ffffff;height: 70px;">
+      <a href="/" class="logo">
+        <img src="assets/images/ic_launcherlatest.png" id="topimg">
+      </a>
+    </div>
+
+    <ul class="navbar-nav mr-auto" style="list-style: none;">
+      <li><a class="nav-link" routerLinkActive="active" routerLink="/home-new">Home</a></li>
+      <li><a class="nav-link" routerLinkActive="active" routerLink="/zipmasters">Organization Setup</a></li>
+      <li><a href="#">CRM Setup</a></li>
+      <li><a href="#">dCamp Setup</a></li>
+      <li><a href="#">dCamp Execute</a></li>
+      <li><a href="#">Lead Management</a></li>
+      <li><a href="#">Accounts</a></li>
+      <li><a href="#">Order Management</a></li>
+      <li><a href="#">Purchase Management</a></li>
+      <li><a href="#">POS</a></li>
+      <li><a href="#">Dashboard</a></li>
+    </ul>
+    <div class="social_media">
+
+    </div>
+  </div>
+
+  <div class="main_content" style="width: 83%;">
+    <div class="header" style="height: 48px;">
+      <span class="wellheader">
+        Welcome!
+      </span>
+      <ul class="nav navbar-nav trend" style="float: right;list-style: none;margin: 0px;display: inline-flex;">
+        <li style="padding-top: 9px;padding-bottom: 9px;">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+            style="border-left: 1px solid #ccc;padding-top: 8px;padding-bottom: 8px;">
+            <i title="Interested"><img src="assets/images/Intrested.png" class="img-circle" alt="call Image"
+                style="width:20px;border-radius:100%;"></i>
+            <!-- <span class="label label-warning" style="border:1px solid #5f98fa;border-radius:50%;"></span> -->
+          </a>
+        </li>
+        <li style="padding-top: 9px;padding-bottom: 9px;">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+            style="border-left: 1px solid #ccc;padding-top: 8px;padding-bottom:8px;">
+            <i title="Interested"><img src="assets/images/Call-logo.png" class="img-circle" alt="call Image"
+                style="width:20px;border-radius:100%;"> </i>
+            <!-- <span class="label label-warning" style="border:1px solid #ccc;border-radius:50%;"></span> -->
+          </a>
+        </li>
+        <li style="padding-top: 9px;padding-bottom: 9px;">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+            style="border-left: 1px solid #ccc;padding-top: 8px;padding-bottom: 8px;">
+            <i title="notifications"><img src="assets/images/notifiaction.png" class="img-circle" alt="call Image"
+                style="width:20px;border-radius:100%;"></i>
+            <!-- <span class="label label-warning" style="border:1px solid #5f98fa;border-radius:50%;">{{activity.total}}</span> -->
+            <span class="label label-warning" style="border:1px solid #5f98fa;border-radius:50%;">0</span>
+            <!-- <span class="label label-warning" style="border:1px solid #5f98fa;border-radius:50%;"></span> -->
+          </a>
+        </li>
+        <li style="padding-top: 9px;padding-bottom: 9px;">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+            style="border-left: 1px solid #ccc;padding-top: 8px;padding-bottom: 8px;">
+            <i title="leads"><img src="assets/images/feed.png" class="img-circle" alt="call Image"
+                style="width:20px;border-radius:100%;"></i>
+            <!-- <span class="label label-warning" style="border:1px solid #5f98fa;border-radius:50%;"></span> -->
+            <!-- <span class="hidden-xs" style="color:#ffffff;font-weight:600;padding-right:5px;"></span> -->
+          </a>
+        </li>
+        <li style="padding-top: 9px;padding-bottom: 9px;">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+            style="border-left: 1px solid #ccc;padding-top: 8px;padding-bottom: 8px;">
+            <i title="notifications"><img src="assets/images/prof_logo1.png" class="img-circle" alt="call Image"
+                style="width:20px;border-radius:100%;"></i>
+            <!-- <span class="label label-warning" style="border:1px solid #5f98fa;border-radius:50%;"></span> -->
+          </a>
+        </li>
+        <!-- <li class="dropdown user user-menu" style="z-index: 1;">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="border-left: 1px solid #ccc;background: #5f98fa;padding-top: 20px;
+      padding-bottom: 10px;">
+            <img src="assets/images/prof_logo1.png" alt="" style="width: 25px;margin-right: 5px;margin-top: 9px;">
+          </a>
+          <ul class="dropdown-menu" style="list-style: none;padding: 0px;">
+
+            <li class="user-header">
+
+              <img src="assets/images/prof_logo1.png" alt="">
+              <p style="color:#333;">
+                {{ user.firstName}}
+              </p>
+            </li>
+
+            <li class="user-footer" style="display: flex;">
+              <div class="pull-left">
+                <div class="pull-left">
+                  <a class="btn btn-default btn-flat">Profile</a>
+                </div>
+              </div>
+              <div class="pull-right">
+                <a class="btn btn-primary">Sign out</a>
+              </div>
+            </li>
+          </ul>
+        </li> -->
+
+
+      </ul>
+    </div>
+
+
+    <section class="content" style="padding:10px;background: rgb(247, 247, 247);">
+      <div class="box box-primary ng-scope" style="min-height: 558px;border: 0;border-radius:0">
+        <div style="text-align: center;">
+          <!-- <img src="assets/images/shop1.png" alt="" style="margin-top: 5%;margin-left: -70px;width: 60%;height: 360px;"> -->
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </section>
+    <footer class="main-footer" style="padding: 14px;">
+      <!-- To the right -->
+      <div class="pull-right hidden-xs">
+
+      </div>
+      <!-- Default to the left -->
+      <strong>Copyright &copy; 2020-2021 <a href="" style="color: #72afd2;text-decoration:none">ConverBiz
+          Technologies</a>.</strong> All rights reserved.
+    </footer>
+  </div>
+
+
+
+</div>

@@ -1,0 +1,10 @@
+*************index***********
+
+<script src="bower_components/v-tabs/dist/v-tabs.js"></script>
+<link rel="stylesheet" href="bower_components/v-tabs/dist/v-tabs.css" />
+
+
+********app*****************
+
+'vTabs',
+    'ngAnimate'

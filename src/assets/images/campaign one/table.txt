@@ -1,0 +1,18 @@
+
+add this filed in this table
+carts{
+productimage: string,
+actualprice: number,
+presentprice: number
+productdescription:sting,
+unitmeasurementid: number
+}
+
+orders{
+ productimage: string,
+actualprice: number,
+presentprice: number
+productdescription:sting,
+unitmeasurementid: number
+ 
+}

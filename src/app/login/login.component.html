@@ -1,0 +1,48 @@
+<!-- <p>login works!</p> -->
+<div class="row">
+  <div class="col-sm-8">
+    <div style="background:#5f98fa;padding-top:0%;padding-left:6%;height: 656px">
+      <img src="assets/images/background1.png" style="width: 100%;height: 100%;">
+    </div>
+  </div>
+  <div class="col-sm-4 ">
+    <div class="card m-auto">
+      <img src="assets/images/ic_launcherlatest.png" style="width: 150px;height: 160px;padding-top: 16%;margin-left: 20%">
+      <div class="card-header">
+        
+        Login
+      </div>
+      <div class="card-body">
+        <form #loginForm='ngForm' (ngSubmit)="onLogin(loginForm)">
+        <!-- <form> -->
+          <div class="form-group col-12">
+            <!-- <label>Name</label> -->
+            <br>
+            <div style="border: none;
+            border-bottom: 1px solid #ccc;width:65%">
+              <input class="form-control" required ngModel name="userName" placeholder="User Name" style="margin-top: 5px;border: none;
+            outline: none;">
+            </div>
+
+          </div>
+
+          <div class="form-group col-12">
+            <!-- <label>Password</label> -->
+            <br>
+            <div style="border: none;
+            border-bottom: 1px solid #ccc;width:65%">
+              <input class="form-control" placeholder="Password" required ngModel name="password" type="password" style="margin-top: 5px;border: none;
+              outline: none;">
+            </div>
+
+          </div>
+          <br>
+          <div class="form-group col-12">
+            <button type="submit" class="btn btn-primary stylelink">Login</button>
+            <!-- <button type="button" class="btn btn-secondary ml-2">Cancel</button> -->
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

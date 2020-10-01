@@ -1,0 +1,110 @@
+
+<div class="box-body">
+  <app-organization-setup-header></app-organization-setup-header>
+</div>
+
+  <div class="box with-border" style="width:100%;height:auto;background:#fff;">
+    <div class="box-header" style="background:#fff;border:0;">
+      <h3 class="box-title" style="font-weight:600;font-size:23px;">CampaignParameter</h3>
+
+      <div class="pull-right">
+          <div class="col-sm-8" style="margin-left: 870px;margin-top:-16px;">
+            <select id="organization-area" ng-model="orgName" class="form-control"
+              placeholder="Pick a Organization Name" style="width:30%">
+              <option value="">Pick a Organization Name</option>
+              <option value="All">All</option>
+              <option *ngFor="let organization of organizationLists">
+                {{organization.orgname}}
+              </option>
+            </select>
+          </div>
+      </div>
+  </div>
+
+  <br />
+
+  <div class="box-body">
+
+
+    <div data-ng-hide="hideSearchFilter()">
+
+      <div class="row" style="margin:0;padding:0;">
+          <div class="col-sm-6" style="padding-top:5px;">
+              <span>Show</span>
+              <select ng-model="pageSize" data-placeholder="Show Entries" ng-change="pageFunction(pageSize)">
+                  <option value="5">5</option>
+                  <option value="10">10</option>
+                  <option value="15">15</option>
+              </select>
+              <span>Entries</span>
+          </div>
+          <div class="col-sm-6">
+              <div class="row" style="margin:0;padding:0;">
+                  <div class="col-sm-4"></div>
+                  <div class="col-sm-7">
+
+
+                          <div class="input-group">
+                              <input type="text" class="form-control" id="search-criteria" placeholder="Search for..." style="z-index:0; border-top-left-radius: 5px;border-bottom-left-radius: 5px;" data-ng-model="searchZipMaster">
+                              <span class="input-group-btn">
+                              <button class="btn btn-default" type="button" data-ng-click="Search()" style="border-top-right-radius: 5px;border-bottom-right-radius: 5px;"><span class="fa fa-search"></span>
+                              </button>
+                              </span>
+                               <div class="no-results" style="display:none">no results found</div>
+                          </div>
+
+
+                  </div>
+                  <div class="pull-right">
+                      <a routerLink="/zipmasters/create" class="btn btn-primary btn-sm btn-flat" role="button" data-ng-hide="hideCreateButton()"><span class="fa fa-plus"></span> </a>
+                  </div>
+              </div>
+
+          </div>
+
+      </div>
+  </div>
+  <br />
+  <div>
+               <div  class="table-responsive">
+              <table class="table table-striped"  id="zipmaster">
+                  <thead>
+                      <tr>
+                          <th style="width:50px;">#</th>
+                          <th>CampaignParameter</th>
+                          <th>Organization Name</th>
+                          <th style="width:100px;">Action</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr *ngFor="let zipmaster of data | paginate: { id: 'listing_pagination',
+                        itemsPerPage: 5,
+                        currentPage: page,
+                        totalItems: totalRecords }">
+
+                          <td>{{zipmaster.index}}</td>
+                          <td>{{ zipmaster.name }}</td>
+                          <td>
+                            {{zipmaster.orgName}}</td>
+                          <td><a routerLink="/zipmasters/{{ zipmaster.id }}"><span class="fa fa-pencil-square-o"></span></a>
+                              <a routerLink="/zipmasters" ><span class="fa fa-times-circle-o"></span></a>
+                             </td>
+
+                      </tr>
+
+                  </tbody>
+              </table>
+              <div>
+                <pagination-controls id="listing_pagination" maxSize="5" directionLinks="true" (pageChange)="page = $event"></pagination-controls>
+              </div>
+              </div>
+
+
+              <div >
+
+              </div>
+          </div>
+
+  </div>
+  </div>
+
