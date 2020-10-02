@@ -15,34 +15,38 @@
   <br />
 <div class="box-body">
 
-  <form class="form-horizontal" role="form" [formGroup]="addzipmasters" >
-    <br>
-    <div>
+  <form class="form-horizontal" role="form" [formGroup]="zipmastersForm" >
 
-        <div class="row">
-            <div class="col-sm-6">
-              <label for="name" class="col-sm-4 " style="font-weight: 600;margin-top:5px;margin-right: 360px;">Organization Name</label>
-
-              <span>
-                <select class="form-control" formControlName="organizationId"
-                placeholder="Pick a Organization Name" style="width: 50%;margin-left: 15px;" >
+    <div class="form-group row">
+      <label class="control-label col-sm-2" for="course" style="font-weight: 600;margin-top:5px;margin-left:20px">Organization Name<span style="color: red;">*</span></label>
+      <div class="col-sm-4">
+        <select class="form-control" formControlName="organizationId"
+                placeholder="Pick a Organization Name" >
                   <option value="">Pick a Organization Name</option>
-                  <option value="All">All</option>
-                  <option *ngFor="let organization of organizationLists">
+                  <option *ngFor="let organization of organizationLists" value="{{organization.id}}">
                     {{organization.orgname}}
                   </option>
-                </select>
-              </span>
-            </div>
-          </div>
-          <br>
-        <div class="col-sm-6">
-            <label for="name" style="font-weight:600;margin:5px;">CampaignParameter</label>
-            <div class="col-sm-6">
-                <input type="text" class="form-control" formControlName="name" placeholder="campaignparameter" required maxlength="6" numbers-only="numbers-only">
-            </div>
+        </select>
+
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="control-label col-sm-2" for="course" style="font-weight: 600;margin-top:5px;margin-left:20px">CampaignParameter<span style="color: red;">*</span></label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="name" formControlName="name" placeholder="campaignparameter" maxlength="6" numbers-only="numbers-only">
+          <!-- <span *ngIf="!name.valid && (name.touched || userSubmitted)" class="error-block">
+            Please Provide Name
+          </span> -->
+          <p style="color: red;"
+          *ngIf="zipmastersForm.get('name') && zipmastersForm.get('name').touched && zipmastersForm.get('name').invalid">
+          Please enter name
+        </p>
         </div>
     </div>
+
+
+
     <br/>
     <br/>
     <br/>
@@ -50,9 +54,9 @@
         <div>
 
 
-            <button class="btn btn-success btn-sm btn-flat" type="submit" role="button" *ngIf="btnvisiblity" (click)="createZipmaster()">Create </button>&nbsp;
+            <button class="btn btn-success btn-sm btn-flat" type="submit" role="button" *ngIf="btnvisiblity" (click)="onSubmit()">Create </button>&nbsp;
 
-            <button class="btn btn-success btn-sm btn-flat" type="submit" role="button" *ngIf="!btnvisiblity" (click)="updateZipmaster()">Update </button>&nbsp;
+            <button class="btn btn-success btn-sm btn-flat" type="submit" role="button" *ngIf="!btnvisiblity" (click)="onUpdate()">Update </button>&nbsp;
 
 
 

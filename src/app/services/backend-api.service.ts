@@ -56,7 +56,7 @@ export class BackendApiService {
 
 
 getZipmasters() {
-  return this.http.get(this.url + 'zipmasters');
+  return this.http.get(this.url + 'zipmasters?filter[where][deleteflag]=' + 'null');
 }
 
 getZipmastersById(id) {
@@ -78,7 +78,7 @@ deleteZipmaster(id:any) {
 
 
 getOrganizations() {
-  return this.http.get(this.url + 'organizations');
+  return this.http.get(this.url + 'organizations?filter[where][deleteflag]=' + 'null');
 }
 
 }

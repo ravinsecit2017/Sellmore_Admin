@@ -5,6 +5,7 @@ import { Location } from "@angular/common";
 
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { BackendApiService } from 'src/app/services/backend-api.service';
+import { AlertifyService } from 'src/app/services/alertify.service';
 
 @Component({
   selector: 'app-zipmasters-create',
@@ -16,18 +17,22 @@ export class ZipmastersCreateComponent implements OnInit {
   data: any = [];
   public zipmasterId: number;
   btnvisiblity: boolean;
-  route1: string;
-  @Input() hideCreate : boolean;
   routeId: any;
-  addzipmasters: FormGroup;
+  zipmastersForm: FormGroup;
+  name: String;
+  userSubmitted: boolean;
 
-  constructor(private route: ActivatedRoute, private apiData: BackendApiService, private router:Router) {
+  constructor(private route: ActivatedRoute,
+              private apiData: BackendApiService,
+              private router:Router,
+              private fb: FormBuilder,
+              private alertify: AlertifyService) {
 
    }
 
   ngOnInit(): void {
 
-    this.addzipmasters = new FormGroup({
+    this.zipmastersForm = new FormGroup({
       organizationId: new FormControl(),
       name: new FormControl(),
 
@@ -49,46 +54,51 @@ export class ZipmastersCreateComponent implements OnInit {
      this.routeId=this.route.snapshot.url[1].path;
      console.log("RouteId: ", this.routeId);
      this.apiData.getZipmastersById(this.routeId).subscribe((data:any) => {
-      this.addzipmasters.patchValue(data);
+      this.zipmastersForm.patchValue(data);
 
      })
    }
 
-  // this.route.paramMap.subscribe(params => {
-  //   const zipId = +params.get('id');
-  //   if(zipId) {
-  //     this.
-  //   }
-  // });
-
-
-
   }
 
 
-  createZipmaster() {
-    console.log("Submit", this.addzipmasters.value);
-    let flag = this.addzipmasters.value;
+  onSubmit() {
+    console.log("Submit", this.zipmastersForm.value);
+    let flag = this.zipmastersForm.value;
+    if (flag.organizationId == '' || flag.organizationId == null) {
+      this.alertify.warning('Please select Organization Name');
+    } else if (flag.name == '' || flag.name == null) {
+      this.alertify.warning('Please enter name');
+    } else {
     flag.deleteflag = "null";
-    this.apiData.createZipmaster(this.addzipmasters.value).subscribe(zipdata => {
+    this.userSubmitted = true;
+    this.apiData.createZipmaster(this.zipmastersForm.value).subscribe(zipdata => {
       this.data = zipdata;
-      this.router.navigate(['/zipmasters'])
+      this.alertify.success('Congrats! Zipmasters has been created');
+      this.router.navigate(['/zipmasters']);
     }, error => {
-    alert("Something went wrong");
+    this.alertify.warning('oopss! Something went wrong');
 
     });
   }
+  }
 
-  updateZipmaster() {
-    let updateId = this.addzipmasters.value;
-    updateId.id = this.routeId;
-    this.apiData.updateZipmaster(this.addzipmasters.value).subscribe(zipdata => {
+  onUpdate() {
+    let flag = this.zipmastersForm.value;
+    if (flag.organizationId == '' || flag.organizationId == null) {
+      this.alertify.warning('Please select Organization Name');
+    } else if (flag.name == '' || flag.name == null) {
+      this.alertify.warning('Please enter name');
+    } else {
+    flag.id = this.routeId;
+    this.apiData.updateZipmaster(this.zipmastersForm.value).subscribe(zipdata => {
      // this.data = zipdata;
+     this.alertify.success('Congrats! Zipmasters has been updated');
      this.router.navigate(['/zipmasters'])
     }, error => {
-      alert("Something went wrong");
-  });
-
+      this.alertify.warning('oopss! Something went wrong');
+    });
+    }
   }
 
 }

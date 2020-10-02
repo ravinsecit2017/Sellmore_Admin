@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BackendApiService } from 'src/app/services/backend-api.service';
+declare var $:any;
 
 @Component({
   selector: 'app-zipmasters',
@@ -10,9 +11,9 @@ import { BackendApiService } from 'src/app/services/backend-api.service';
 export class ZipmastersComponent implements OnInit {
 
   data: any = [];
-  totalRecords: String;
-  page: Number = 1;
-  currentIndex = -1;
+  // totalRecords: String;
+  // page: Number = 1;
+  // currentIndex = -1;
   organizationLists: any = [];
   public popoverTitle: string = 'Confirm Delete!';
   public popoverMessage: string = 'Are you sure? you want to delete?';
@@ -20,6 +21,8 @@ export class ZipmastersComponent implements OnInit {
   public cancelClicked: boolean = false;
 
   item : any = [];
+  orgName: any;
+
 
 
 
@@ -29,10 +32,12 @@ export class ZipmastersComponent implements OnInit {
   ngOnInit() {
     console.log('Current Route: ' + this.router);
     this.apiData.getZipmasters().subscribe((resultlist:any)=>{
+
+
       this.apiData.getOrganizations().subscribe((orglist:any)=>{
       resultlist.forEach((result:any, index:any) => {
         result.index = index + 1;
-        if(result.deleteflag === 'null'){
+
           for (var i=0; i<orglist.length; i++) {
             if(result.organizationId == orglist[i].id) {
 
@@ -42,18 +47,25 @@ export class ZipmastersComponent implements OnInit {
             }
           }
           this.data.push(result);
-        }
+
 
 
 
       });
        this.data = resultlist;
         this.organizationLists = orglist;
-
+        $(document).ready(function() {
+          $('#zipmaster').DataTable( {
+              "pagingType": "full_numbers",
+              "lengthMenu": [[5, 10, 25, -1], [5, 10, 25, "All"]]
+          });
+      });
 
 
     })
     })
+
+    console.log("OrgName", this.orgName);
   }
 
   confirmClicked(id: number) {

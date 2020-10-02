@@ -10,11 +10,11 @@
 
 
           <span style="float: right;">
-            <select id="organization-area" ng-model="orgName" class="form-control"
+            <select id="organization-area" [(ngModel)]="orgName" class="form-control"
               placeholder="Pick a Organization Name" >
               <option value="">Pick a Organization Name</option>
               <option value="All">All</option>
-              <option *ngFor="let organization of organizationLists">
+              <option *ngFor="let organization of organizationLists" value="{{organization.id}}">
                 {{organization.orgname}}
               </option>
             </select>
@@ -30,7 +30,7 @@
 
     <div data-ng-hide="hideSearchFilter()">
 
-      <div class="row" style="margin:0;padding:0;">
+      <!-- <div class="row" style="margin:0;padding:0;">
           <div class="col-sm-6" style="padding-top:5px;">
               <span>Show</span>
               <select ng-model="pageSize" data-placeholder="Show Entries" ng-change="pageFunction(pageSize)">
@@ -64,7 +64,7 @@
 
           </div>
 
-      </div>
+      </div> -->
   </div>
   <br />
   <div>
@@ -79,10 +79,7 @@
                       </tr>
                   </thead>
                   <tbody>
-                      <tr *ngFor="let zipmaster of data | paginate: { id: 'listing_pagination',
-                        itemsPerPage: 5,
-                        currentPage: page,
-                        totalItems: totalRecords }">
+                      <tr *ngFor="let zipmaster of data">
 
                           <td>{{zipmaster.index}}</td>
                           <td>{{ zipmaster.name }}</td>
@@ -96,9 +93,9 @@
 
                   </tbody>
               </table>
-              <div>
+              <!-- <div>
                 <pagination-controls id="listing_pagination" maxSize="5" directionLinks="true" (pageChange)="page = $event"></pagination-controls>
-              </div>
+              </div> -->
               </div>
 
 
